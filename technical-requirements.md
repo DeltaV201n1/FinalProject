@@ -20,5 +20,14 @@ Epics:
     3-2.  As a user I want my ship to address to prefill from my log in info 
   
   4.  As a user I want to go to a page that gives me information about the people behind the company
+  
+  Whiteboards:
+  
+  1.  Group agreement - images/group-agreement-signed.jpg
+  2.  User stories/Epics - images/user-stories-epic stories.jpg
+  3.  Domain data model - images/domain-data-model.jpg
+  4.  Login page/Shopping page - images/login-page-shopping-page.jpg
+  5.  Shopping cart - images/shopping-cart.jpg
+  
      
   
