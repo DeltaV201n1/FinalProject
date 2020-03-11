@@ -28,6 +28,7 @@ Epics:
   3.  Domain data model - images/domain-data-model.jpg
   4.  Login page/Shopping page - images/login-page-shopping-page.jpg
   5.  Shopping cart - images/shopping-cart.jpg
+  6.  About me - 
   
      
   
