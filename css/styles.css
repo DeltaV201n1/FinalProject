@@ -1,3 +1,99 @@
+
+#logo{
+
+    width: 250px;
+}
+
+ul li{
+display: inline;
+font-size: 30px;
+padding: 10px;
+float:right;
+}
+
+
+img{
+
+    float: left;
+}
+
+
+header h1{
+text-align: center;
+font-size: 40px;
+font-weight: 600;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#shoppingCart{
+
+    margin-top: 200px;
+    margin-left: 550px;
+
+}
+table th {
+
+ padding: 20px;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ color:darkslategray;
+ background-color: lightblue;
+
+ 
+}
+
+
+th:first-child{
+
+    border-top-left-radius: 10px;
+
+}
+
+th:last-child{
+
+    border-top-right-radius: 10px;
+
+}
+
+
+td:first-child{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+td{
+
+    padding: 20px;
+    
+    background-color: lightgrey;
+
+    border: grey ;
+}
+
+th, td{  border-bottom: 1px solid darkslategray;
+
+}
+   
+
+
+
+td:nth-last-child(){
+
+text-align: center;
+color:darkslategray;
+
+background-color: white;
+
+}
+
+footer img{
+
+    /* margin-top: 50px;
+    margin-left: 20px; */
+
+    width: 100%;
+    margin-top: 150px;
+
 header {
     background-color: lightblue;
     text-align: center;
