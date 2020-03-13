@@ -8,7 +8,6 @@ ul li{
 display: inline;
 font-size: 30px;
 padding: 10px;
-float:right;
 }
 
 
@@ -93,6 +92,7 @@ footer img{
 
     width: 100%;
     margin-top: 150px;
+}
 
 header {
     background-color: lightblue;
