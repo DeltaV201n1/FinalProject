@@ -28,5 +28,4 @@ Epics:
   4.  Login page/Shopping page - <img src="images/login-page-shopping-page.jpg">
   5.  Shopping cart - <img src="images/shopping-cart.jpg">
   6.  About me - <img src="technicalImages/aboutMe.jpg">
-  
-  
+  7.  Persistent storage - <img src="technicalImages/storage.jpg>
