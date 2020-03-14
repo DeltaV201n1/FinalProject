@@ -2,12 +2,18 @@ img.news-image {
     background: #dadada;
     height: 300px;
     width: 300px;
+    margin-bottom: 30px;
+    border-radius: 50%;
   }
   p.news-info {
     margin-top: 0;
+    width: 400px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
   }
   .news-item {
     clear: both;
+    padding: 40px;
   }
   .odd div.news-info {
     float: right;
