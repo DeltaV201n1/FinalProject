@@ -13,12 +13,14 @@
         <main>
             <div id="select">
                 <label for="sport">Choose a sport:</label>
-                <select id ="sport">
+                <!-- Create a Select box that automatically changes display based on selection -->
+                <select id ="sport" onchange="displayImages()">
                     <option>Baseball</option>
                     <option>Basketball</option>
                     <option>Football</option>
                     <option>Hockey</option>
                     <option>Hockey-Goalie</option>
+                    <option>Softball</option>
                     <option>Tennis</option>
                     <option>Volleyball</option>
                 </select>
@@ -104,6 +106,6 @@
 
         </footer>
         
-        <script src="" async defer></script>
+        <script src="js/shop.js"></script>
     </body>
 </html>
