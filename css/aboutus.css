@@ -1,13 +1,19 @@
-img.news-image {
+.news-image {
     background: #dadada;
     height: 300px;
     width: 300px;
+    margin-bottom: 30px;
+    border-radius: 50%;
   }
   p.news-info {
     margin-top: 0;
+    width: 400px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
   }
   .news-item {
     clear: both;
+    padding: 40px;
   }
   .odd div.news-info {
     float: right;
@@ -25,3 +31,28 @@ img.news-image {
       width: 800px;
       margin: auto;
   }
+  .content {
+    min-height: calc(100vh - 70px);
+  }
+  .footer {
+    height: 50px;
+    clear: both;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+#icons {
+      padding-top: 40px;
+      text-align: center;
+  }
+.logos {
+    height: 50px;
+}
+#logos {
+    border: 1px;
+}
+#wilson {
+    height: 30px;
+}
+#schutt {
+    height: 35px;
+}
