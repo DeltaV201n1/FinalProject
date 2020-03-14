@@ -1,0 +1,31 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+    background-color: dodgerblue;
+}
+
+header {
+    background-color: lightgrey;
+    text-align: center;
+    height: 150px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#headerTitle {
+    text-align: center;
+    font-size: 65px;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 20px;
+    text-align: left;
+    color: rgb(218, 123, 16);
+}
+
+ul li{
+    display: inline;
+    font-size: 30px;
+    padding: 10px;
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    }
