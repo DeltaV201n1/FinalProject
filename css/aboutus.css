@@ -31,3 +31,28 @@
       width: 800px;
       margin: auto;
   }
+  .content {
+    min-height: calc(100vh - 70px);
+  }
+  .footer {
+    height: 50px;
+    clear: both;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+#icons {
+      padding-top: 40px;
+      text-align: center;
+  }
+.logos {
+    height: 50px;
+}
+#logos {
+    border: 1px;
+}
+#wilson {
+    height: 30px;
+}
+#schutt {
+    height: 35px;
+}
