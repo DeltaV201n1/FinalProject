@@ -41,11 +41,11 @@ function showCart() {
           xtd.id=i;
           xtd.addEventListener('click', removeItemFromCart);
 
-      var =document.createElement('td');
-          quantity.textContent=cart[i].; 
+      var imgcart=document.createElement('td');
+          imgcart.textContent=cart[i].imgUrl; 
 
       var Item=document.createElement('td');
-          Item.textContent=cart[i].Item;
+          Item.textContent=cart[i].name;
 
   var table = document.getElementById('shoppingCart');
   var tfooter = document.createElement('tfoot');
