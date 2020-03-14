@@ -1,31 +1,8 @@
-#logo{
-
-    width: 250px;
-}
-
-ul li{
-display: inline;
-font-size: 30px;
-padding: 10px;
-float: right;
-
-}
-
-
-
-
-header h1{
-text-align: center;
-font-size: 40px;
-font-weight: 600;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 #shoppingCart{
 
     margin-top: 200px;
     margin-left: 550px;
-
 }
 table th {
 
@@ -34,14 +11,12 @@ table th {
  color:darkslategray;
  background-color: lightblue;
 
- 
 }
 
 
 th:first-child{
 
     border-top-left-radius: 10px;
-
 }
 
 th:last-child{

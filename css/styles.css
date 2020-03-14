@@ -1,5 +1,5 @@
 
-
+/* To be deleted - header and title*/
 /* header {
     background-color: lightblue;
     text-align: center;
@@ -8,10 +8,51 @@
     width: 100%;
 } */
 
-#title {
+/* #title {
     text-align: center;
+} */
+
+
+/* body, header, ul li, a:link a:visited = styles for the header/nav bar */
+body {
+    margin: 0 auto;
+    width: 100%;
+    background-color:lightgrey;
 }
 
+header {
+    background-color: darkred;
+    height: 160px;
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 14px;
+}
+
+
+ul li{
+    font-size: 30px;
+    padding: 10px;
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0px;
+    background-color: darkgrey;
+    color: white;
+    padding: 14px 25px;
+    }
+
+a:link, a:visited {
+    background-color: whitesmoke;
+    color: darkred;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+/* select, imgContainer, prodImg, and singleImgCont - index.html which is shopping page */
 #select {
     margin-bottom: 10px;
     margin-top: 30px;
@@ -30,9 +71,86 @@
     float: left;
 }
 
-footer {
-    clear: both;
-    background-color: lightblue;
-    height: 150px;
-    width: 100%;
+
+
+/* Below are styles for the shopping cart page */
+
+#shoppingCart{
+
+    margin-top: 200px;
+    margin-left: 550px;
 }
+table th {
+
+ padding: 20px;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ color:darkslategray;
+ background-color: lightblue;
+
+}
+
+
+th:first-child{
+
+    border-top-left-radius: 10px;
+}
+
+th:last-child{
+
+    border-top-right-radius: 10px;
+
+}
+
+
+td:first-child{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+td{
+
+    padding: 20px;
+    
+    background-color: lightgrey;
+
+    border: grey ;
+}
+
+th, td{  border-bottom: 1px solid darkslategray;
+
+}
+   
+
+td:nth-last-child(){
+
+text-align: center;
+color:darkslategray;
+
+background-color: white;
+
+}
+
+footer img{
+
+    /* margin-top: 50px;
+    margin-left: 20px; */
+
+    width: 100%;
+    margin-top: 150px;
+}
+
+button{
+  
+margin-left: 880px;
+margin-top: 20px;
+
+width: 100px;
+height: 50px;
+background-color: lightblue ;
+
+}
+
+
+/* Below are the About Us and footer styles */
+
