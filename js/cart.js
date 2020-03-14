@@ -41,8 +41,8 @@ function showCart() {
           xtd.id=i;
           xtd.addEventListener('click', removeItemFromCart);
 
-      var quantity=document.createElement('td');
-          quantity.textContent=cart[i].quantity; 
+      var =document.createElement('td');
+          quantity.textContent=cart[i].; 
 
       var Item=document.createElement('td');
           Item.textContent=cart[i].Item;
@@ -55,11 +55,16 @@ function showCart() {
 
   var tr = document.createElement('tr');
   tfooter.appendChild(tr);
-  var td = document.createElement('td');
-  td.textContent = 'subtotal:';
-  tr.appendChild(td);
+  var td1 = document.createElement('td');
+  var td2 = document.createElement('td');
+  var td3 = document.createElement('td');
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  td3.textContent = 'subtotal:';
+  tr.appendChild(td3);
+
   var total = 0;
-  for (var x = -0; x < cart.length- 1; x++)
+  for (var x = -0; x < cart.length ; x++)
   {
     td = document.createElement('td');
     var sum = 0;
