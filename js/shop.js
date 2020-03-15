@@ -1,17 +1,32 @@
 'use strict';
 console.log('We\'re in business');
 
-var productElements = document.getElementById('imgSection');
-var productIndex1 = 0;
-var productIndex2 = 1;
-var productIndex3 = 2;
-var baseballProds = [];
-var softballProds = [];
-var footballProds = [];
-var hockeyProds = [];
+var baseProds = [];
+var basketProds = [];
+var footProds = [];
 var goalieProds = [];
-var volleyballProds = [];
+var hockeyProds = [];
+var softProds = [];
 var tennisProds = [];
+var volleyProds = [];
+var allProds = [baseProds, basketProds, footProds, hockeyProds, goalieProds, softProds, tennisProds, volleyProds];
+var items = [];
+
+var Cart = function(items) {
+    this.items = items;
+}
+
+Cart.prototype.saveToLocalStorage = function() {
+    localStorage.setItem('savedCart', JSON.stringify(this.items));
+  };
+
+Cart.prototype.removeItem = function(item) {
+    this.items.splice(item, 1);
+  };
+
+var CartItem = function(product) {
+    this.product = product;
+};
 
 // Constructor
 function Product(name, url, price, sport, description) {
@@ -20,82 +35,176 @@ function Product(name, url, price, sport, description) {
     this.price = price;
     this.sport = sport;
     this.description = description;
-    if(this.sport == 'base') {
+    if(this.sport == 'baseball') {
         baseProds.push(this);
-    } else if(this.sport == 'soft') {
-        softProds.push(this);
-    } else if(this.sport == 'foot') {
+    } else if(this.sport == 'basketball') {
+        basketProds.push(this);
+    }  else if(this.sport == 'football') {
         footProds.push(this);
     } else if(this.sport == 'hockey') {
         hockeyProds.push(this);   
-    } else if(this.sport == 'volley') {
-        volleyProds.push(this);
+    } else if(this.sport == 'goalie') {
+        goalieProds.push(this);
+    } else if(this.sport == 'softball') {
+        softProds.push(this);
     } else if(this.sport == 'tennis') {
         tennisProds.push(this);
-    } else if(this.sport == 'hockeyg') {
-        goalieProds.push(this);
+    } else if(this.sport == 'volleyball') {
+        volleyProds.push(this);
     }
 }
 
-new Product('Boy\'s Adidas BB Shoes', 'img/adidasbbshoe.JPG', '', 'basket', '');
-new Product('Girl\'s Asics VB Shoes', 'img/asicvbshoe.jpg', '', 'volley', '');
-new Product('Rawlings Bucket of 24 Baseballs', 'img/baseball.jpeg', '', 'base', '');
-new Product('Easton Ghost Bat', 'img/basebat.jpg', '', 'base', '');
-new Product('Nike Batting Glove', 'img/basebatglove.jpg', '', 'base', '');
-new Product('Mizuno Catching Gear', 'img/basecatch.jpg', '', 'base', '');
-new Product('Mizuno Catcher\'s Mitt', 'img/basecatchmitt.jpeg', '', 'base', '');
-new Product('Wilson Baseball Glove', 'img/baseglove.jpg', '', 'base', '');
-new Product('Mizuno Batting Helmet', 'img/basehelmet.jpg', '', 'base', '');
-new Product('Nike Baseball Pants', 'img/basepant.jpeg', '', 'base', '');
-new Product('Spalding Basketball', 'img/basketball.jpg', '', 'basket', '');
-new Product('Nike Shooting Sleeve', 'img/bblseeve.jpg', '', 'basket', '');
-new Product('Boy\'s Nike BB Shoes', 'img/blknikebbshoe.jpg', '', 'basket', '');
-new Product('Girl\'s Nike BB Shoes', 'img/blpknikebbshoe.jpg', '', 'basket', '');
-new Product('Girl\'s Nike BB Shoes', 'img/brpknikebbshoe.jpg', '', 'basket', '');
-new Product('Adidas Compression Shirt', 'img/fbcompress.jpeg', '', 'foot', '');
-new Product('Schutt Elbow Pads', 'img/fbelbow.jpg', '', 'foot', '');
-new Product('Under Armour Football Gloves', 'img/fbglove.jpg', '', 'foot', '');
-new Product('Riddell Helmet', 'img/fbhelmet', '', 'foot', '');
-new Product('Schutt Mouthguard', 'img/fbmouthguard.jpg', '', 'foot', '');
-new Product('Riddell Football Pads', 'img/fbpad.jpg', '', 'foot', '');
-new Product('Nike Football Pants', 'img/fbpants.jpg', '', 'foot', '');
-new Product('Wilson Football', 'img/football.jpg', '', 'foot', '');
-new Product('Bauer Goalie Chest Pad', 'img/hockeychestpad.jpg', '', 'hockeyg', '');
-new Product('Bauer Goalie Elbow Pads', 'img/goalelbowpad.jpg', '', 'hockeyg', '');
-new Product('CCM Goalie Leg Pads', 'img/goallegpads.jpg', '', 'hockeyg', '');
-new Product('Bauer Goalie Stick', 'img/goalstick.jpg', '', 'hockeyg', '');
-new Product('CCM Chest Pad', 'img/hockeychestpad.jpg', '', 'hockey', '');
-new Product('CCM Elbow Pads', 'img/hockeyelbowpad.jpg', '', 'hockey', '');
-new Product('CCM Gloves', 'img/hockeygloves.jpeg', '', 'hockey', '');
-new Product('Bauer Goalie\'s Mask', 'img/hockeygoalmask.jpg', '', 'hockeyg', '');
-new Product('Bauer Helmet', 'img/hockeyhelmet.jpg', '', 'hockey', '');
-new Product('CCM Knee Pads', 'img/hockeykneepad.jpg', '', 'hockey', '');
-new Product('Bauer Pants', 'img/hockeypant.jpg', '', 'hockey', '');
-new Product('Bauer Stick', 'img/hockeystick.jpeg', '', 'hockey', '');
-new Product('LP Girl\s Nike BB Shoes', 'img/ltpknikebbshoe.jpg', '', 'basket', '');
-new Product('Girl\'s Mizuno VB Shoes', 'img/mizunovbshoe.jpg', '', 'volley', '');
-new Product('Girl\'s Nike VB Shoes', 'img/nikevbshoe.jpg', '', 'volley', '');
-new Product('Nike Pro VB Shorts', 'img/nikevbshort.jpg', '', 'volley', '');
-new Product('Easton Prowess Bat', 'img/sbbat.jpeg', '', 'soft', '');
-new Product('Easton Catcher\'s Kit', 'img/sbcatcherkit.jpg', '', 'soft', '');
-new Product('Mizuno Catcher\'s Mitt', 'img/sbcatchermitt.jpg', '', 'soft', '');
-new Product('Schutt Field Mask', 'img/sbfieldmask.jpg', '', 'soft', '');
-new Product('Franklin Glove', 'img/sbglove.jpg', '', 'soft', '');
-new Product('Mizuno Batting Helmet', 'img/sbhelmet.jpeg', '', 'soft', '');
-new Product('Mizuno Pants', 'img/sbpant.jpeg', '', 'soft', '');
-new Product('12 Rawlings Softballs', '/img/softball.jpg', '', 'soft', '');
-new Product('Boy\'s Under Armour Shoes', 'img/uabbshoe.jpg', '', 'basket', '');
-new Product('Under Armour Mouthguard', 'img/uamouthguard.jpg', '', 'hockey', '');
-new Product('Under Armour VB Shorts', 'img/uavbshort.jpg', '', 'volley', '');
-new Product('Nike VB Knee Pads', 'img/vbkneepad.jpg', '', 'volley', '');
-new Product('Spalding Volleyball', 'img/volleyball.jpg', '', 'volley', '');
-new Product('Girl\'s Babolat Tennis Shoes', 'img/babolatpk.jpg', '', 'tennis', '');
-new Product('Boy\s Nike Tennis Shoes', 'img/niketns.jpeg', '', 'tennis', '');
-new Product('3 Pack Wison Tennis Balls', 'img/tennisball.jpeg', '', 'tennis', '');
-new Product('Wilson Federer Racket', 'img/wilsonfedrkt.jpg', '', 'tennis', '');
-new Product('Wilson Racket', 'img/wilsonrkt.jpg', '', 'tennis', '');
-new Product('Girl\'s Wilson Tennis Shoe', 'img/wilsontns.jpg', '', 'tennis', '');
-new Product('Boy\'s Babolat Tennis Shoes', 'img/babolatrd.jpeg', '', 'tennis', '');
+
+
+// Create all Product objects
+new Product('Boy\'s Adidas BB Shoes', 'img/adidasbbshoe.JPG', '10', 'basketball', 'New');
+new Product('Boy\'s Asics Tennis Shoes', 'img/asicstns.jpeg', '13', 'tennis', 'New');
+new Product('Girl\'s Asics VB Shoes', 'img/asicvbshoe.jpg', '13', 'volleyball', 'New');
+new Product('Rawlings Bucket of 24 Baseballs', 'img/baseball.jpeg', '25', 'baseball', 'New');
+new Product('Easton Ghost Bat', 'img/basebat.jpg', '45', 'baseball', 'New');
+new Product('Nike Batting Glove', 'img/basebatglove.jpg', '7', 'baseball', 'New');
+new Product('Mizuno Catching Gear', 'img/basecatch.jpg', '50', 'baseball', 'New');
+new Product('Mizuno Catcher\'s Mitt', 'img/basecatchmitt.jpeg', '20', 'baseball', 'Used');
+new Product('Wilson Baseball Glove', 'img/baseglove.jpg', '33', 'baseball', 'New');
+new Product('Mizuno Batting Helmet', 'img/basehelmet.jpg', '10', 'baseball', 'New');
+new Product('Nike Baseball Pants', 'img/basepant.jpeg', '9', 'baseball', 'New');
+new Product('Spalding Basketball', 'img/basketball.jpg', '10', 'basketball', 'New');
+new Product('Nike Shooting Sleeve', 'img/bbsleeve.jpg', '5', 'basketball', 'New');
+new Product('Boy\'s Nike BB Shoes', 'img/blknikebbshoe.jpg', '13', 'basketball', 'New');
+new Product('Girl\'s Nike BB Shoes', 'img/blpknikebbshoe.jpg', '13', 'basketball', 'New');
+new Product('Girl\'s Nike BB Shoes', 'img/brpknikebbshoe.jpg', '13', 'basketball', 'New');
+new Product('Adidas Compression Shirt', 'img/fbcompress.jpeg', '9', 'football', 'New');
+new Product('Schutt Elbow Pads', 'img/fbelbow.jpg', '3', 'football', 'New');
+new Product('Under Armour Football Gloves', 'img/fbglove.jpg', '5', 'football', 'New');
+new Product('Riddell Helmet', 'img/fbhelmet.png', '30', 'football', 'New');
+new Product('Schutt Mouthguard', 'img/fbmouthguard.jpg', '1', 'football', 'New');
+new Product('Riddell Football Pads', 'img/fbpad.jpg', '10', 'football', 'Used');
+new Product('Nike Football Pants', 'img/fbpants.jpg', '9', 'football', 'New');
+new Product('Wilson Football', 'img/football.jpg', '7', 'football', 'New');
+new Product('Bauer Goalie Chest Pad', 'img/hockeychestpad.jpg', '20', 'goalie', 'New');
+new Product('Bauer Goalie Elbow Pads', 'img/goalelbowpad.jpg', '10', 'goalie', 'New');
+new Product('CCM Goalie Leg Pads', 'img/goallegpads.jpg', '25', 'goalie', 'Used');
+new Product('Bauer Goalie Stick', 'img/goalstick.jpg', '15', 'goalie', 'New');
+new Product('CCM Chest Pad', 'img/hockeychestpad.jpg', '13', 'hockey', 'New');
+new Product('CCM Elbow Pads', 'img/hockeyelbowpad.jpg', '8', 'hockey', 'New');
+new Product('CCM Gloves', 'img/goalieloves.jpeg', '10', 'hockey', 'New');
+new Product('Bauer Goalie\'s Mask', 'img/goalieoalmask.jpg', '14', 'goalie', 'New');
+new Product('Bauer Helmet', 'img/hockeyhelmet.jpg', '14', 'hockey', 'New');
+new Product('CCM Knee Pads', 'img/hockeykneepad.jpg', '9', 'hockey', 'New');
+new Product('Bauer Pants', 'img/hockeypant.jpg', '15', 'hockey', 'New');
+new Product('Bauer Stick', 'img/hockeystick.jpeg', '13', 'hockey', 'New');
+new Product('LP Girl\s Nike BB Shoes', 'img/ltpknikebbshoe.jpg', '13', 'basketball', 'New');
+new Product('Girl\'s Mizuno VB Shoes', 'img/mizunovbshoe.jpg', '13', 'volleyball', 'New');
+new Product('Girl\'s Nike VB Shoes', 'img/nikevbshoe.jpg', '13', 'volleyball', 'New');
+new Product('Nike Pro VB Shorts', 'img/nikevbshort.jpg', '7', 'volleyball', 'New');
+new Product('Easton Prowess Bat', 'img/sbbat.jpeg', '34', 'soft', 'New');
+new Product('Easton Catcher\'s Kit', 'img/sbcatcherkit.jpg', '50', 'soft', 'Used');
+new Product('Mizuno Catcher\'s Mitt', 'img/sbcatchermitt.jpg', '15', 'soft', 'New');
+new Product('Schutt Field Mask', 'img/sbfieldmask.jpg', '9', 'soft', 'New');
+new Product('Franklin Glove', 'img/sbglove.jpg', '13', 'soft', 'New');
+new Product('Mizuno Batting Helmet', 'img/sbhelmet.jpeg', '10', 'soft', 'New');
+new Product('Mizuno Pants', 'img/sbpant.jpeg', '9', 'soft', 'New');
+new Product('12 Rawlings Softballs', '/img/softball.jpg', '13', 'soft', 'New');
+new Product('Boy\'s Under Armour Shoes', 'img/uabbshoe.jpg', '13', 'basketball', 'New');
+new Product('Under Armour Mouthguard', 'img/uamouthguard.jpg', '4', 'hockey', 'New');
+new Product('Under Armour VB Shorts', 'img/uavbshort.jpg', '7', 'volleyball', 'New');
+new Product('Nike VB Knee Pads', 'img/vbkneepad.jpg', '4', 'volleyball', 'New');
+new Product('Spalding Volleyball', 'img/volleyball.jpg', '13', 'volleyball', 'New');
+new Product('Girl\'s Babolat Tennis Shoes', 'img/babolatpk.jpg', '10', 'tennis', 'New');
+new Product('Boy\'s Nike Tennis Shoes', 'img/niketns.jpeg', '10', 'tennis', 'New');
+new Product('3 Pack Wison Tennis Balls', 'img/tennisball.jpeg', '1', 'tennis', 'New');
+new Product('Wilson Federer Racket', 'img/wilsonfedrkt.jpg', '9', 'tennis', 'New');
+new Product('Wilson Racket', 'img/wilsonrkt.jpg', '20', 'tennis', 'New');
+new Product('Girl\'s Wilson Tennis Shoe', 'img/wilsontns.jpg', '8', 'tennis', 'New');
+new Product('Boy\'s Babolat Tennis Shoes', 'img/babolatrd.jpeg', '10', 'tennis', 'New');
 // new Product('', '', '', '', '');
 // new Product('', '', '', '', '');
 
+function displayImages() {
+    // Get index os Selected Sport
+    var sportIndex = document.getElementById('sport').value;
+    console.log(sportIndex);
+    // That index coincides with that sport's array in the allProds array
+    var chosenSport = allProds[sportIndex];
+    var imageSection = document.getElementById('imgSection');
+    imageSection.innerHTML = '';
+    for (var i = 0; i < chosenSport.length; i++) {
+        var imgDiv = document.createElement('div');
+        imgDiv.classList.add('singleImgCont');
+        var prodImg = document.createElement('img');
+        prodImg.classList.add('productImage');
+        prodImg.src = chosenSport[i].productUrl;
+        prodImg.alt = `${chosenSport[i].sport} equipment image`;
+
+        // Add image info as a form
+        var prodForm = document.createElement('form');
+        prodForm.addEventListener('submit', addProduct);
+        // var nameLabel = document.createElement('label');
+        // nameLabel.innerHTML = 'Item: ';
+        // nameLabel.classList.add('formLabel');
+        // prodForm.appendChild(nameLabel);
+       
+        // Create hidden input to be passed in input
+        var nameInput = document.createElement('input');
+        nameInput.setAttribute('type', 'hidden');
+        nameInput.setAttribute('id', 'name');
+        nameInput.setAttribute('value', chosenSport[i].name);
+        prodForm.appendChild(nameInput);
+        var nameSpan = document.createElement('p');
+        nameSpan.innerHTML = chosenSport[i].name;
+        prodForm.appendChild(nameSpan);
+
+        var urlInput = document.createElement('input');
+        urlInput.setAttribute('type', 'hidden');
+        urlInput.setAttribute('id', 'url');
+        urlInput.setAttribute('value', chosenSport[i].productUrl);
+        prodForm.appendChild(urlInput);
+
+        // var priceLabel = document.createElement('label');
+        // priceLabel.classList.add('formLabel');
+        // priceLabel.innerHTML = 'Price: ';
+        // prodForm.appendChild(priceLabel);
+        var priceInput = document.createElement('input');
+        priceInput.setAttribute('type', 'hidden');
+        priceInput.setAttribute('id', 'price');
+        priceInput.setAttribute('value', chosenSport[i].price);
+        prodForm.appendChild(priceInput);
+        var priceSpan = document.createElement('span');
+        priceSpan.innerHTML = '$';
+        var priceData = document.createElement('span');
+        priceData.innerHTML = chosenSport[i].price;
+        priceSpan.appendChild(priceData);
+        prodForm.appendChild(priceSpan);
+
+        // var descrLabel = document.createElement('label');
+        // descrLabel.classList.add('formLabel');
+        // descrLabel.innerHTML = 'Description: ';
+        // prodForm.appendChild(descrLabel);
+        // var descrInput = document.createElement('input');
+        // descrInput.setAttribute('type', 'hidden');
+        // descrInput.setAttribute('id', 'description');
+        // descrInput.setAttribute('value', chosenSport[i].description);
+        // prodForm.appendChild(descrInput)
+        // var descrSpan = document.createElement('span');
+        // descrSpan.innerHTML = chosenSport[i].description;
+        // prodForm.appendChild(descrSpan);
+
+        var submitButton = document.createElement('input');
+        submitButton.type = 'submit';
+        prodForm.appendChild(submitButton);
+
+        imgDiv.appendChild(prodImg);
+        imgDiv.appendChild(prodForm);
+        imageSection.appendChild(imgDiv);
+    }
+}
+
+function addProduct(e) {
+    e.preventDefault();
+    var newProduct = [event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value];
+    // items.push(newProduct);
+    localStorage.setItem('savedCart', JSON.stringify(newProduct));
+    // updateCounter();
+}
+
+// displayImages();

@@ -12,15 +12,17 @@
         </header>
         <main>
             <div id="select">
-                <label for="sport">Choose a sport:</label>
-                <select id ="sport">
-                    <option>Baseball</option>
-                    <option>Basketball</option>
-                    <option>Football</option>
-                    <option>Hockey</option>
-                    <option>Hockey-Goalie</option>
-                    <option>Tennis</option>
-                    <option>Volleyball</option>
+                <!-- Create a Select box that automatically changes display based on selection -->
+                <select id ="sport" onchange="displayImages()">
+                    <option>Select a sport</option>
+                    <option value="0">Baseball</option>
+                    <option value="1">Basketball</option>
+                    <option value="2">Football</option>
+                    <option value="3">Hockey</option>
+                    <option value="4">Hockey-Goalie</option>
+                    <option value="5">Softball</option>
+                    <option value="6">Tennis</option>
+                    <option value="7">Volleyball</option>
                 </select>
             </div>
             <section id="imgSection" class="imgContainer">
@@ -60,8 +62,6 @@
                     </ul>
                     <button class="add">Add to cart</button>
                 </div>
-            </section>
-            <section class="imgContainer">
                 <div class="singleImgCont">
                     <img class="prodImg" id="5" src="https://via.placeholder.com/275?text=Product+Image">
                     <ul>
@@ -104,6 +104,6 @@
 
         </footer>
         
-        <script src="" async defer></script>
+        <script src="js/shop.js"></script>
     </body>
 </html>
