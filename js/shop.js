@@ -1,4 +1,4 @@
-'use strict';
+use strict';
 console.log('We\'re in business');
 
 var baseProds = [];
@@ -10,23 +10,28 @@ var softProds = [];
 var tennisProds = [];
 var volleyProds = [];
 var allProds = [baseProds, basketProds, footProds, hockeyProds, goalieProds, softProds, tennisProds, volleyProds];
-var items = [];
+// var items = [];
 
-var Cart = function(items) {
-    this.items = items;
-}
+// var Cart = function(items) {
+//     this.items = items;
+// }
 
-Cart.prototype.saveToLocalStorage = function() {
-    localStorage.setItem('savedCart', JSON.stringify(this.items));
-  };
+// Cart.prototype.saveToLocalStorage = function() {
+//     localStorage.setItem('savedCart', JSON.stringify(this.items));
+//   };
 
-Cart.prototype.removeItem = function(item) {
-    this.items.splice(item, 1);
-  };
+//   Cart.prototype.addItem = function(product) {
+//     var newItem = new CartItem(product);
+//     this.items.push(newItem);
+//   };
 
-var CartItem = function(product) {
-    this.product = product;
-};
+// Cart.prototype.removeItem = function(item) {
+//     this.items.splice(item, 1);
+//   };
+
+// var CartItem = function(product) {
+//     this.product = product;
+// };
 
 // Constructor
 function Product(name, url, price, sport, description) {
@@ -53,8 +58,6 @@ function Product(name, url, price, sport, description) {
         volleyProds.push(this);
     }
 }
-
-
 
 // Create all Product objects
 new Product('Boy\'s Adidas BB Shoes', 'img/adidasbbshoe.JPG', '10', 'basketball', 'New');
@@ -87,8 +90,8 @@ new Product('CCM Goalie Leg Pads', 'img/goallegpads.jpg', '25', 'goalie', 'Used'
 new Product('Bauer Goalie Stick', 'img/goalstick.jpg', '15', 'goalie', 'New');
 new Product('CCM Chest Pad', 'img/hockeychestpad.jpg', '13', 'hockey', 'New');
 new Product('CCM Elbow Pads', 'img/hockeyelbowpad.jpg', '8', 'hockey', 'New');
-new Product('CCM Gloves', 'img/goalieloves.jpeg', '10', 'hockey', 'New');
-new Product('Bauer Goalie\'s Mask', 'img/goalieoalmask.jpg', '14', 'goalie', 'New');
+new Product('CCM Gloves', 'img/hockeygloves.jpeg', '10', 'hockey', 'New');
+new Product('Bauer Goalie\'s Mask', 'img/hockeygoalmask.jpg', '14', 'goalie', 'New');
 new Product('Bauer Helmet', 'img/hockeyhelmet.jpg', '14', 'hockey', 'New');
 new Product('CCM Knee Pads', 'img/hockeykneepad.jpg', '9', 'hockey', 'New');
 new Product('Bauer Pants', 'img/hockeypant.jpg', '15', 'hockey', 'New');
@@ -97,14 +100,14 @@ new Product('LP Girl\s Nike BB Shoes', 'img/ltpknikebbshoe.jpg', '13', 'basketba
 new Product('Girl\'s Mizuno VB Shoes', 'img/mizunovbshoe.jpg', '13', 'volleyball', 'New');
 new Product('Girl\'s Nike VB Shoes', 'img/nikevbshoe.jpg', '13', 'volleyball', 'New');
 new Product('Nike Pro VB Shorts', 'img/nikevbshort.jpg', '7', 'volleyball', 'New');
-new Product('Easton Prowess Bat', 'img/sbbat.jpeg', '34', 'soft', 'New');
-new Product('Easton Catcher\'s Kit', 'img/sbcatcherkit.jpg', '50', 'soft', 'Used');
-new Product('Mizuno Catcher\'s Mitt', 'img/sbcatchermitt.jpg', '15', 'soft', 'New');
-new Product('Schutt Field Mask', 'img/sbfieldmask.jpg', '9', 'soft', 'New');
-new Product('Franklin Glove', 'img/sbglove.jpg', '13', 'soft', 'New');
-new Product('Mizuno Batting Helmet', 'img/sbhelmet.jpeg', '10', 'soft', 'New');
-new Product('Mizuno Pants', 'img/sbpant.jpeg', '9', 'soft', 'New');
-new Product('12 Rawlings Softballs', '/img/softball.jpg', '13', 'soft', 'New');
+new Product('Easton Prowess Bat', 'img/sbbat.jpeg', '34', 'softball', 'New');
+new Product('Easton Catcher\'s Kit', 'img/sbcatcherkit.jpg', '50', 'softball', 'Used');
+new Product('Mizuno Catcher\'s Mitt', 'img/sbcatchermitt.jpg', '15', 'softball', 'New');
+new Product('Schutt Field Mask', 'img/sbfieldmask.jpg', '9', 'softball', 'New');
+new Product('Franklin Glove', 'img/sbglove.jpg', '13', 'softball', 'New');
+new Product('Mizuno Batting Helmet', 'img/sbhelmet.jpeg', '10', 'softball', 'New');
+new Product('Mizuno Pants', 'img/sbpant.jpeg', '9', 'softball', 'New');
+new Product('12 Rawlings Softballs', '/img/softball.jpg', '13', 'softball', 'New');
 new Product('Boy\'s Under Armour Shoes', 'img/uabbshoe.jpg', '13', 'basketball', 'New');
 new Product('Under Armour Mouthguard', 'img/uamouthguard.jpg', '4', 'hockey', 'New');
 new Product('Under Armour VB Shorts', 'img/uavbshort.jpg', '7', 'volleyball', 'New');
@@ -121,11 +124,9 @@ new Product('Boy\'s Babolat Tennis Shoes', 'img/babolatrd.jpeg', '10', 'tennis',
 // new Product('', '', '', '', '');
 
 function displayImages() {
-    // Get index os Selected Sport
-    var sportIndex = document.getElementById('sport').value;
-    console.log(sportIndex);
-    // That index coincides with that sport's array in the allProds array
-    var chosenSport = allProds[sportIndex];
+    // Get Selected Sport
+    var selectedSport = document.getElementById('sport').value;
+    var chosenSport = allProds[selectedSport];
     var imageSection = document.getElementById('imgSection');
     imageSection.innerHTML = '';
     for (var i = 0; i < chosenSport.length; i++) {
@@ -191,6 +192,7 @@ function displayImages() {
 
         var submitButton = document.createElement('input');
         submitButton.type = 'submit';
+        submitButton.classList.add('subButton');
         prodForm.appendChild(submitButton);
 
         imgDiv.appendChild(prodImg);
@@ -199,11 +201,31 @@ function displayImages() {
     }
 }
 
+function Item(name, url, price) {
+    this.name = name;
+    this.url = url;
+    this.price = price;
+}
+
+function Basket(item) {
+    this.items = items;
+}
+
+Basket.prototype.saveItem = function(items) {
+    localStorage.setItem('savedCart', JSON.stringify(this.items));
+};
+
+var basket = [];
+
 function addProduct(e) {
     e.preventDefault();
-    var newProduct = [event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value];
-    // items.push(newProduct);
-    localStorage.setItem('savedCart', JSON.stringify(newProduct));
+    // var newProduct = [event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value];
+    var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
+    basket.push(newProduct);
+    console.log(cart);
+    localStorage.setItem('savedCart', JSON.stringify(this.items));
+    // cart.saveToLocalStorage(newProduct);
+    // localStorage.setItem('savedCart', JSON.stringify(newProduct));
     // updateCounter();
 }
 
