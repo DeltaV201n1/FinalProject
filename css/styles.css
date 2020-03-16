@@ -36,3 +36,12 @@ footer {
     height: 150px;
     width: 100%;
 }
+
+.productImage {
+    height: 275px;
+    width: 275px;
+}
+
+.formLabel {
+    display: block;
+}
