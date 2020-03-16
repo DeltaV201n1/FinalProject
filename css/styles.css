@@ -8,6 +8,10 @@ header {
     width: 100%;
 }
 
+main {
+    width: 100%;
+}
+
 #title {
     text-align: center;
 }
@@ -19,7 +23,7 @@ header {
 }
 
 .imgContainer {
-    text-align: center;
+    
 }
 
 .prodImg {
@@ -37,11 +41,20 @@ footer {
     width: 100%;
 }
 
+.singleImgCont {
+    border: 2px solid black;
+    margin: 15px;
+}
+
 .productImage {
-    height: 275px;
-    width: 275px;
+    height: 250px;
+    width: 250px;
 }
 
 .formLabel {
     display: block;
+}
+
+.subButton {
+    display: blcok;
 }

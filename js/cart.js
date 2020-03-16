@@ -4,10 +4,10 @@ console.log('We\'re in business');
 var sum=0;
 var table = document.getElementById('shoppingCart');
 table.addEventListener('click', removeItemFromCart);
-var cart;
+var cart = new Cart();
 
 function loadCart() {
-  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  var cartItems = JSON.parse(localStorage.getItem('savedCart')) || [];
   cart = new Cart(cartItems);
 }
 
@@ -20,13 +20,12 @@ function renderCart() {
 
 // Remove all of the rows in the shoppingCart table (tbody)
 function clearCart() {
-
- var tableRows=document.querySelectorAll('#shoppingCart tbody tr ')
- for (var i=0;i<= tableRows.length;i++)
- {
-   if(tableRows[i]){
-     tableRows[i].remove();
-   }
+  var tableRows=document.querySelectorAll('#shoppingCart tbody tr ')
+  for (var i=0;i<= tableRows.length;i++)
+  {
+    if(tableRows[i]){
+      tableRows[i].remove();
+    }
  }
 
 
