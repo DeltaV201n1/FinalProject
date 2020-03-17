@@ -2,67 +2,58 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Equip Me Sports</title>
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/cart.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- <link rel="stylesheet" href="css/cart.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/img/favicon.png">        
     </head>
     <body>
         <header>
+            <div id="headerTitle"><img src="/img/realLogoSmallest.png" width: 50%></a></div>
             
-            <img id='logo' src="images/placeholder.com-logo4.jpg"   >
-
             <nav>
-                <ul>
-                    <li ><label id="cart"> 
-                         <img src="images/cart.jpg"><span class='badge badge-warning' id='lblCartCount'></span></a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutme.html">About Us</a></li>
-                </ul>
+               <ul>                
+                <li><a href="/cart.html"><label id="cart"></label> <img src="images/cart.jpg"></a></li>
+                <li><a href="index.html">Home</a><span id="navHome"></span></li>
+                <li><a href="aboutme.html">About Us</a><span id="navAboutMe"></span></li>              
+              </ul>
             </nav>
-
             <h1>EquipeMe Sports </h1>
 
-        </header>
-
+          </header>
         <main>
 
         <section class="card">
-        <div class="card">
-        <table id='shoppingCart'>
-            <thead>
-               <tr>
-               </tr>
-                <th >Remove</th>
-                <th>items</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Price</th>
-               </tr>
-               
-           </thead>
-           <tbody>
-           </tbody>
-          
-        <button class="checkout">Checkout</button>
-
-    </section>
-        </div> 
-
+                <div class="card">
+                        <table id='shoppingCart'>
+                            <thead>
+                            <tr>
+                            </tr>
+                                <th>Remove</th>
+                                <th>items</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                <button class="checkout">Checkout</button>
+            
+                </div> 
+           </section>
 
 
         </main>
-
         <footer>
 
             <img src="https://placehold.it/1400x200/ddd">
 
         </footer>
-
-        
-       
-        
         <script src="js/cart.js"></script>
     </body>
 </html>
