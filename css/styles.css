@@ -8,10 +8,13 @@
     width: 100%;
 } */
 
-/* #title {
-    text-align: center;
-} */
 
+main {
+    width: 100%;
+}
+#title {
+    text-align: center;
+} 
 
 /* body, header, ul li, a:link a:visited = styles for the header/nav bar */
 body {
@@ -59,9 +62,9 @@ a:link, a:visited {
     text-align: center;
 }
 
-.imgContainer {
-    text-align: center;
-}
+/* .imgContainer {
+    
+} */
 
 .prodImg {
     margin: 15px 15px 0px 15px;
@@ -132,38 +135,37 @@ background-color: white;
 }
 
 footer img{
-
     /* margin-top: 50px;
     margin-left: 20px; */
-
     width: 100%;
-<<<<<<< HEAD
+}
+
+.singleImgCont {
+    border: 2px solid black;
+    margin: 15px;
 }
 
 .productImage {
-    height: 275px;
-    width: 275px;
+    height: 250px;
+    width: 250px;
 }
 
 .formLabel {
     display: block;
 }
-=======
-    margin-top: 150px;
-}
+
 
 button{
-  
 margin-left: 880px;
 margin-top: 20px;
-
 width: 100px;
 height: 50px;
 background-color: lightblue ;
-
 }
 
 
 /* Below are the About Us and footer styles */
 
->>>>>>> navBar
+.subButton {
+    display: blcok;
+}
