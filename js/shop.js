@@ -1,4 +1,4 @@
-use strict';
+'use strict';
 console.log('We\'re in business');
 
 var baseProds = [];
@@ -139,7 +139,7 @@ function displayImages() {
 
         // Add image info as a form
         var prodForm = document.createElement('form');
-        prodForm.addEventListener('submit', addProduct);
+        prodForm.addEventListener('submit', Cart.addProduct(e));
         // var nameLabel = document.createElement('label');
         // nameLabel.innerHTML = 'Item: ';
         // nameLabel.classList.add('formLabel');
@@ -201,32 +201,3 @@ function displayImages() {
     }
 }
 
-function Item(name, url, price) {
-    this.name = name;
-    this.url = url;
-    this.price = price;
-}
-
-function Basket(item) {
-    this.items = items;
-}
-
-Basket.prototype.saveItem = function(items) {
-    localStorage.setItem('savedCart', JSON.stringify(this.items));
-};
-
-var basket = [];
-
-function addProduct(e) {
-    e.preventDefault();
-    // var newProduct = [event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value];
-    var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
-    basket.push(newProduct);
-    console.log(cart);
-    localStorage.setItem('savedCart', JSON.stringify(this.items));
-    // cart.saveToLocalStorage(newProduct);
-    // localStorage.setItem('savedCart', JSON.stringify(newProduct));
-    // updateCounter();
-}
-
-// displayImages();
