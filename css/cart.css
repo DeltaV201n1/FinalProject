@@ -1,4 +1,8 @@
 
+
+
+
+/* 
 #shoppingCart {
     margin-top: 200px;
     margin-left: 550px;
@@ -12,7 +16,7 @@ table th {
 }
 
 
-th:first-child {
+/* th:first-child {
     border-top-left-radius: 10px;
 }
 
@@ -36,7 +40,7 @@ td {
 th, td {  
     border-bottom: 1px solid darkslategray;
 }
-   
+    */
 
 
 
@@ -85,3 +89,13 @@ button {
     height: 200px;
     width: 200px;
 }
+
+/* #shoppingCart{
+
+    width:45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1 px solid lightblue;
+} */ */
