@@ -135,7 +135,7 @@ function Basket(items) {
     this.items = items;
 }
 
-Basket.prototype.saveItem = function(items) {
+Basket.prototype.saveItem = function() {
     localStorage.setItem('savedCart', JSON.stringify(this.items));
 };
 
@@ -144,6 +144,10 @@ Basket.prototype.addProduct = function(e) {
     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
     basket.items.push(newProduct);
     basket.saveItem(this.items);
+}
+
+Basket.prototype.removeItem=function(id){
+    this.items.splice(id,1);
 }
 
 
@@ -231,7 +235,6 @@ function displayImages() {
 //     e.preventDefault();
 //     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
 //     basket.push(newProduct);
-//     console.log(basket);
 //     basket.saveItem(this.items);
 // }
 
