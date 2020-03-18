@@ -1,6 +1,7 @@
 'use strict';
 console.log('We\'re in business');
 
+setCartIcon();
 var baseProds = [];
 var basketProds = [];
 var footProds = [];
@@ -144,10 +145,13 @@ Basket.prototype.addProduct = function(e) {
     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
     basket.items.push(newProduct);
     basket.saveItem(this.items);
+    setCartIcon();
+
 }
 
 Basket.prototype.removeItem=function(id){
     this.items.splice(id,1);
+   
 }
 
 
@@ -229,13 +233,13 @@ function displayImages() {
     }
 }
 
-
-
-// function addProduct(e) {
-//     e.preventDefault();
-//     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
-//     basket.push(newProduct);
-//     basket.saveItem(this.items);
-// }
-
-// displayImages();
+function setCartIcon() {
+  var cartIcon = document.getElementById('lblCartCount');
+  var cartCount=getLocalCart().length;
+      cartIcon.textContent = cartCount;
+  
+}
+function getLocalCart() {
+    var newItem = JSON.parse(localStorage.getItem('savedCart')) || [];
+    return newItem;
+  }
