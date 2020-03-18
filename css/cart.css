@@ -1,14 +1,17 @@
-<<<<<<< HEAD
+#cart{
+     width: 5px; 
+}
+  
 #logo{
 
-    width: 250px;
+    width: 50px;
 }
 
 ul li{
 display: inline;
 font-size: 30px;
 padding: 10px;
-float: right;
+/* float: right; */
 
 }
 
@@ -18,14 +21,12 @@ li img{
 }
 
 
-header h1{
+/* header h1{
 text-align: center;
 font-size: 40px;
 font-weight: 600;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-=======
->>>>>>> navBar
+} */
 
 #shoppingCart{
 
@@ -69,7 +70,8 @@ td{
     border: grey ;
 }
 
-th, td{  border-bottom: 1px solid darkslategray;
+th, td{  
+    border-bottom: 1px solid darkslategray;
 
 }
    
@@ -85,14 +87,14 @@ background-color: white;
 
 }
 
-footer img{
+/* footer img{
 
-    /* margin-top: 50px;
-    margin-left: 20px; */
+    margin-top: 50px;
+    margin-left: 20px;
 
     width: 100%;
     margin-top: 150px;
-}
+} */
 
 button{
   
