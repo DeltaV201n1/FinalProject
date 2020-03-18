@@ -1,110 +1,63 @@
-<<<<<<< HEAD
-#logo{
 
-    width: 250px;
-}
-
-ul li{
-display: inline;
-font-size: 30px;
-padding: 10px;
-float: right;
-
-}
-
-li img{
-    width: 40px;
-    height: 40px;
-}
-
-
-header h1{
-text-align: center;
-font-size: 40px;
-font-weight: 600;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-=======
->>>>>>> navBar
-
-#shoppingCart{
-
+#shoppingCart {
     margin-top: 200px;
     margin-left: 550px;
 }
-table th {
 
+table th {
  padding: 20px;
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  color:darkslategray;
  background-color: lightblue;
-
 }
 
 
-th:first-child{
-
+th:first-child {
     border-top-left-radius: 10px;
 }
 
-th:last-child{
-
+th:last-child {
     border-top-right-radius: 10px;
-
 }
 
 
-td:first-child{
+td:first-child {
     color: red;
     font-size: 20px;
     text-align: center;
 }
 
-td{
-
-    padding: 20px;
-    
+td {
+    padding: 20px; 
     background-color: lightgrey;
-
     border: grey ;
 }
 
-th, td{  border-bottom: 1px solid darkslategray;
-
+th, td {  
+    border-bottom: 1px solid darkslategray;
 }
    
 
 
 
-td:nth-last-child(){
-
-text-align: center;
-color:darkslategray;
-
-background-color: white;
-
+td:nth-last-child() {
+    text-align: center;
+    color:darkslategray;
+    background-color: white;
 }
 
-footer img{
-
-    /* margin-top: 50px;
-    margin-left: 20px; */
-
+footer img {
     width: 100%;
     margin-top: 150px;
 }
 
-button{
-  
-margin-left: 880px;
-margin-top: 20px;
-
-width: 100px;
-height: 50px;
-background-color: lightblue ;
-
+button {  
+    margin-left: 880px;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: lightblue ;
 }
-
 
 .badge {
     padding-left: 9px;
@@ -118,11 +71,17 @@ background-color: lightblue ;
   .badge-warning[href] {
     background-color: #c67605;
   }
-  #lblCartCount {
-      font-size: 12px;
-      background: #ff0000;
-      color: #fff;
-      padding: 0 5px;
-      vertical-align: top;
-      margin-left: -10px; 
-  }
+
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+
+.cartImage {
+    height: 200px;
+    width: 200px;
+}
