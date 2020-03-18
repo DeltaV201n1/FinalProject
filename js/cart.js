@@ -1,16 +1,21 @@
 'use strict';
 console.log('We\'re in business');
 
-
 var table = document.getElementById('shoppingCart');
 table.addEventListener('click', removeItemFromCart);
 
-// var basket;
-
 function getLocalCart() {
   var newItem = JSON.parse(localStorage.getItem('savedCart')) || [];
-  // basket = new Basket(newItem);
-return newItem;
+  return newItem;
+}
+
+function purchase() {
+  event.preventDefault();
+  alert('Thank you for your order. We are working as fast as possible to get your product packaged. You will receive confirmation of shipment and a tracking number shortly.');
+  var currentCart = getLocalCart();
+  currentCart.splice(0, currentCart.length);
+  localStorage.clear();
+  renderCart();
 }
 
 // Render function
@@ -20,7 +25,7 @@ function renderCart() {
   showCart(cart);
 }
 
-// Remove all of the rows in the shoppingCart table (tbody)
+// Remove all of the rows in the shoppingCart table (tbody and tfoot)
 function clearCart() {
   var bodyRows = document.querySelectorAll('#shoppingCart tbody tr ');
   for (var i = 0; i < bodyRows.length; i++) {
@@ -34,8 +39,6 @@ function clearCart() {
       footerRows[i].remove();
     }
   }
-
-
 }
 
 function showCart(cart) {
@@ -44,25 +47,27 @@ function showCart(cart) {
   for (var i = 0; i < cart.length; i++) {
     var tr = document.createElement('tr');
     var xtd = document.createElement('td');
+    // Create remove item link as a hyperlink
     var xa=document.createElement('a');
-        xa.id='remove'+i;
-        xa.href='javascript:removeItemFromCart('+i+'); ';
-        xa.textContent = 'x';
-        xtd.appendChild(xa);
+    xa.id='remove'+i;
+    xa.href='javascript:removeItemFromCart('+i+'); ';
+    xa.textContent = 'x';
+    xtd.appendChild(xa);
 
+    // Add thumbnail of image
     var imgcart = document.createElement('td');
     var imgs = document.createElement('img');
     imgs.classList.add('cartImage');
     imgs.src = cart[i].url;
     imgcart.appendChild(imgs);
-    // imgcart.textContent=imgs; 
 
+    // Add item description
     var Item = document.createElement('td');
     Item.textContent = cart[i].name;
 
+    // Add item price
     var price = document.createElement('td');
-    price.textContent = cart[i].price;
-
+    price.textContent = '$ ' + cart[i].price;
 
     tr.appendChild(xtd);
     tr.appendChild(imgcart);
@@ -82,10 +87,10 @@ function showCart(cart) {
   td3.textContent = 'Subtotal :';
   var subtotal = document.createElement('td');
   for (i = 0; i < cart.length; i++) {
-    sum = sum +parseInt( cart[i].price);
+    sum = sum + parseInt(cart[i].price);
   }
 
-  subtotal.textContent = sum;
+  subtotal.textContent = '$ ' + sum;
 
   var tr2 = document.createElement('tr');
   var td4 = document.createElement('td');
@@ -94,20 +99,17 @@ function showCart(cart) {
   td6.textContent = 'Tax :';
   var tax = document.createElement('td');
   var stax = 0.07;
-  var staxes = (sum * stax).toFixed(2);
-  tax.textContent = staxes;
+  var staxes = parseFloat((sum * stax).toFixed(2));
+  tax.textContent = '$ ' + staxes;
 
   var tr3 = document.createElement('tr');
   var td7 = document.createElement('td');
   var td8 = document.createElement('td');
   var td9 = document.createElement('td');
-      td9.textContent = 'Total :';
-
-
+  td9.textContent = 'Total :';
+  var totalValue = sum + staxes;
   var total = document.createElement('td');
-  total.textContent = parseFloat(staxes )+ sum;
-
-
+  total.textContent = '$ ' + totalValue;
 
   tr1.appendChild(td1);
   tr1.appendChild(td2);
@@ -126,33 +128,19 @@ function showCart(cart) {
   tfooter.appendChild(tr3);
 }
 
-
-
 function removeItemFromCart(id) {
-// var rmvButton=document.getElementById('remove'+id);
-// console.log('remove'+id,rmvButton);
-//     rmvButton.disabled = true;
-event.preventDefault();
-  
-  var tempCart =getLocalCart();
-  console.log(tempCart);
+  event.preventDefault();
+  var tempCart = getLocalCart();
   tempCart.splice(id,1);
-  console.log(tempCart);
-
   localStorage.setItem('savedCart',JSON.stringify(tempCart));
-  // var deleteRow =getLocalCart()[id];
-  // basket.removeItem(deleteRow);
-  // basket.saveItem();
   renderCart();
   return false;
 }
 
 function cartIcon() {
-
   var cartIcon = document.getElementById('lblCartCount');
   var cartCount=getLocalCart().length;
   cartIcon.textContent = cartCount;
-
 }
 
 renderCart();
