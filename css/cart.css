@@ -1,5 +1,38 @@
 
+#cart{
+     width: 5px; 
+}
+  
+#logo{
+
+    width: 50px;
+}
+
+ul li{
+display: inline;
+font-size: 30px;
+padding: 10px;
+/* float: right; */
+}
+
+
+
+
+
+
+/* header h1{
+text-align: center;
+font-size: 40px;
+font-weight: 600;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+
+
+
+/* 
 #shoppingCart {
+
     margin-top: 200px;
     margin-left: 550px;
 }
@@ -12,7 +45,7 @@ table th {
 }
 
 
-th:first-child {
+ th:first-child {
     border-top-left-radius: 10px;
 }
 
@@ -33,10 +66,15 @@ td {
     border: grey ;
 }
 
+
+th, td{  
+    border-bottom: 1px solid darkslategray;
+}
+
 th, td {  
     border-bottom: 1px solid darkslategray;
 }
-   
+    */
 
 
 
@@ -46,10 +84,17 @@ td:nth-last-child() {
     background-color: white;
 }
 
+/* footer img{
+
+    margin-top: 50px;
+    margin-left: 20px;
+
+}
 footer img {
+
     width: 100%;
     margin-top: 150px;
-}
+} */
 
 button {  
     margin-left: 880px;
@@ -85,3 +130,13 @@ button {
     height: 200px;
     width: 200px;
 }
+
+/* #shoppingCart{
+
+    width:45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1 px solid lightblue;
+} */ 

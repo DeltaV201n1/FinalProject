@@ -4,10 +4,6 @@ console.log('We\'re in business');
 var table = document.getElementById('shoppingCart');
 table.addEventListener('click', removeItemFromCart);
 
-function getLocalCart() {
-  var newItem = JSON.parse(localStorage.getItem('savedCart')) || [];
-  return newItem;
-}
 
 function purchase() {
   event.preventDefault();
@@ -20,9 +16,9 @@ function purchase() {
 
 // Render function
 function renderCart() {
-  clearCart();
-  var cart= getLocalCart();
-  showCart(cart);
+clearCart();
+var cart= getLocalCart();
+showCart(cart);
 }
 
 // Remove all of the rows in the shoppingCart table (tbody and tfoot)
@@ -134,13 +130,10 @@ function removeItemFromCart(id) {
   tempCart.splice(id,1);
   localStorage.setItem('savedCart',JSON.stringify(tempCart));
   renderCart();
+  setCartIcon();
   return false;
 }
 
-function cartIcon() {
-  var cartIcon = document.getElementById('lblCartCount');
-  var cartCount=getLocalCart().length;
-  cartIcon.textContent = cartCount;
-}
+
 
 renderCart();
