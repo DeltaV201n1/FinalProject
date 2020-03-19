@@ -163,6 +163,13 @@ height: 50px;
 background-color: lightblue ;
 }
 
+#allSport {
+    width: 100%;
+}
+
+.itemForm {
+    text-align: center;
+}
 
 /* Below are the About Us and footer styles */
 

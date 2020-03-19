@@ -4,21 +4,21 @@ console.log('We\'re in business');
 var table = document.getElementById('shoppingCart');
 table.addEventListener('click', removeItemFromCart);
 
-
 function purchase() {
   event.preventDefault();
   alert('Thank you for your order. We are working as fast as possible to get your product packaged. You will receive confirmation of shipment and a tracking number shortly.');
   var currentCart = getLocalCart();
   currentCart.splice(0, currentCart.length);
   localStorage.clear();
+  setCartIcon();
   renderCart();
 }
 
 // Render function
 function renderCart() {
-clearCart();
-var cart= getLocalCart();
-showCart(cart);
+  clearCart();
+  var cart= getLocalCart();
+  showCart(cart);
 }
 
 // Remove all of the rows in the shoppingCart table (tbody and tfoot)
@@ -43,6 +43,7 @@ function showCart(cart) {
   for (var i = 0; i < cart.length; i++) {
     var tr = document.createElement('tr');
     var xtd = document.createElement('td');
+    
     // Create remove item link as a hyperlink
     var xa=document.createElement('a');
     xa.id='remove'+i;
@@ -82,6 +83,8 @@ function showCart(cart) {
   var td3 = document.createElement('td');
   td3.textContent = 'Subtotal :';
   var subtotal = document.createElement('td');
+
+  // Funtion to calculate the cart subtotal
   for (i = 0; i < cart.length; i++) {
     sum = sum + parseInt(cart[i].price);
   }
@@ -133,7 +136,5 @@ function removeItemFromCart(id) {
   setCartIcon();
   return false;
 }
-
-
 
 renderCart();
