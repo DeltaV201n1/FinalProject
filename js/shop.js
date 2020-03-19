@@ -10,28 +10,7 @@ var softProds = [];
 var tennisProds = [];
 var volleyProds = [];
 var allProds = [baseProds, basketProds, footProds, hockeyProds, goalieProds, softProds, tennisProds, volleyProds];
-// var items = [];
 
-// var Cart = function(items) {
-//     this.items = items;
-// }
-
-// Cart.prototype.saveToLocalStorage = function() {
-//     localStorage.setItem('savedCart', JSON.stringify(this.items));
-//   };
-
-//   Cart.prototype.addItem = function(product) {
-//     var newItem = new CartItem(product);
-//     this.items.push(newItem);
-//   };
-
-// Cart.prototype.removeItem = function(item) {
-//     this.items.splice(item, 1);
-//   };
-
-// var CartItem = function(product) {
-//     this.product = product;
-// };
 
 // Constructor
 function Product(name, url, price, sport, description) {
@@ -221,6 +200,7 @@ function displayImages() {
         var submitButton = document.createElement('input');
         submitButton.type = 'submit';
         submitButton.classList.add('subButton');
+        submitButton.value = 'Add to Cart';
         prodForm.appendChild(submitButton);
 
         imgDiv.appendChild(prodImg);
