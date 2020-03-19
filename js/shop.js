@@ -1,6 +1,7 @@
 'use strict';
 console.log('We\'re in business');
 
+setCartIcon();
 var baseProds = [];
 var basketProds = [];
 var footProds = [];
@@ -123,6 +124,37 @@ new Product('Boy\'s Babolat Tennis Shoes', 'img/babolatrd.jpeg', '10', 'tennis',
 // new Product('', '', '', '', '');
 // new Product('', '', '', '', '');
 
+var basket = new Basket([]);
+
+function Item(name, url, price) {
+    this.name = name;
+    this.url = url;
+    this.price = price;
+}
+
+function Basket(items) {
+    this.items = items;
+}
+
+Basket.prototype.saveItem = function() {
+    localStorage.setItem('savedCart', JSON.stringify(this.items));
+};
+
+Basket.prototype.addProduct = function(e) {
+    e.preventDefault();
+    var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
+    basket.items.push(newProduct);
+    basket.saveItem(this.items);
+    setCartIcon();
+
+}
+
+Basket.prototype.removeItem=function(id){
+    this.items.splice(id,1);
+   
+}
+
+
 function displayImages() {
     // Get Selected Sport
     var selectedSport = document.getElementById('sport').value;
@@ -139,7 +171,7 @@ function displayImages() {
 
         // Add image info as a form
         var prodForm = document.createElement('form');
-        prodForm.addEventListener('submit', addProduct);
+        prodForm.addEventListener('submit', basket.addProduct);
         // var nameLabel = document.createElement('label');
         // nameLabel.innerHTML = 'Item: ';
         // nameLabel.classList.add('formLabel');
@@ -201,32 +233,13 @@ function displayImages() {
     }
 }
 
-function Item(name, url, price) {
-    this.name = name;
-    this.url = url;
-    this.price = price;
+function setCartIcon() {
+  var cartIcon = document.getElementById('lblCartCount');
+  var cartCount=getLocalCart().length;
+      cartIcon.textContent = cartCount;
+  
 }
-
-function Basket(item) {
-    this.items = items;
-}
-
-Basket.prototype.saveItem = function(items) {
-    localStorage.setItem('savedCart', JSON.stringify(this.items));
-};
-
-var basket = [];
-
-function addProduct(e) {
-    e.preventDefault();
-    // var newProduct = [event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value];
-    var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
-    basket.push(newProduct);
-    console.log(cart);
-    localStorage.setItem('savedCart', JSON.stringify(this.items));
-    // cart.saveToLocalStorage(newProduct);
-    // localStorage.setItem('savedCart', JSON.stringify(newProduct));
-    // updateCounter();
-}
-
-// displayImages();
+function getLocalCart() {
+    var newItem = JSON.parse(localStorage.getItem('savedCart')) || [];
+    return newItem;
+  }
