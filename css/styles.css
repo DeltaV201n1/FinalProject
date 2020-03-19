@@ -1,17 +1,9 @@
 
-/* To be deleted - header and title*/
-/* header {
-    background-color: lightblue;
-    text-align: center;
-    height: 150px;
-    margin: 0 auto;
-    width: 100%;
-} */
-
 
 main {
     width: 100%;
 }
+
 #title {
     text-align: center;
 } 
@@ -43,7 +35,7 @@ ul li{
     padding: 14px 25px;
     }
 
-a:link, a:visited {
+Header a:link, a:visited {
     background-color: whitesmoke;
     color: darkred;
     padding: 14px 25px;
@@ -52,7 +44,7 @@ a:link, a:visited {
     display: inline-block;
     font-size: x-large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+    } 
 
 
 /* select, imgContainer, prodImg, and singleImgCont - index.html which is shopping page */
@@ -80,15 +72,15 @@ a:link, a:visited {
 
 #shoppingCart{
 
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 550px;
 }
 table th {
 
  padding: 20px;
  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- color:darkslategray;
- background-color: lightblue;
+ color:white;
+ background-color: darkred;
 
 }
 
@@ -105,11 +97,7 @@ th:last-child{
 }
 
 
-td:first-child{
-    color: red;
-    font-size: 20px;
-    text-align: center;
-}
+
 
 td{
 
@@ -118,9 +106,10 @@ td{
     background-color: lightgrey;
 
     border: grey ;
+    text-align: center;
 }
 
-th, td{  border-bottom: 1px solid darkslategray;
+th, td{  border-bottom: 1px solid darkred;
 
 }
    
@@ -134,11 +123,6 @@ background-color: white;
 
 }
 
-footer img{
-    /* margin-top: 50px;
-    margin-left: 20px; */
-    width: 100%;
-}
 
 .singleImgCont {
     border: 2px solid black;
@@ -156,11 +140,12 @@ footer img{
 
 
 button{
-margin-left: 880px;
+margin-left: 800px;
 margin-top: 20px;
 width: 100px;
 height: 50px;
-background-color: lightblue ;
+background-color: darkred ;
+color: white;
 }
 
 #allSport {
@@ -175,4 +160,25 @@ background-color: lightblue ;
 
 .subButton {
     display: blcok;
+}
+
+.cartImage{
+
+width: 50px;
+height: 50px;
+text-align: center;
+}
+
+.cartremove{
+
+color: darkred;
+text-align: center;
+    
+}
+
+.logos{
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 50px;
 }

@@ -47,9 +47,11 @@ function showCart(cart) {
     // Create remove item link as a hyperlink
     var xa=document.createElement('a');
     xa.id='remove'+i;
+    xa.classList.add('cartremove');
+    xa.textContent='X';
     xa.href='javascript:removeItemFromCart('+i+'); ';
-    xa.textContent = 'x';
     xtd.appendChild(xa);
+  
 
     // Add thumbnail of image
     var imgcart = document.createElement('td');
