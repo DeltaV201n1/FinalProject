@@ -1,7 +1,6 @@
 
 
 .news-image {
-    background: #dadada;
     height: 300px;
     width: 300px;
     margin-bottom: 30px;
@@ -53,10 +52,4 @@
 }
 #logos {
     border: 1px;
-}
-#wilson {
-    height: 30px;
-}
-#schutt {
-    height: 35px;
 }

@@ -100,6 +100,12 @@ new Product('Wilson Racket', 'img/wilsonrkt.jpg', '20', 'tennis');
 new Product('Girl\'s Wilson Tennis Shoe', 'img/wilsontns.jpg', '8', 'tennis');
 new Product('Boy\'s Babolat Tennis Shoes', 'img/babolatrd.jpeg', '10', 'tennis');
 
+// function getAllProds() {
+//     for (i=0; i<allProds.length; x++)
+//         for (j=0; j<i.length; j++)
+//         return;
+// }
+
 var basket = new Basket([]);
 
 function Item(name, url, price) {
@@ -119,8 +125,10 @@ Basket.prototype.saveItem = function() {
 Basket.prototype.addProduct = function(e) {
     e.preventDefault();
     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
+    var currentItems = getLocalCart();
+    currentItems.push(newProduct);
     basket.items.push(newProduct);
-    basket.saveItem(this.items);
+    localStorage.setItem('savedCart', JSON.stringify(currentItems));
     setCartIcon();
 
 }
@@ -199,3 +207,50 @@ function getLocalCart() {
     var newItem = JSON.parse(localStorage.getItem('savedCart')) || [];
     return newItem;
   }
+//   // chart code thanks to https://www.chartjs.org/docs/latest/
+//   var ctx = document.getElementById('chart').getContext('2d');
+//   // eslint-disable-next-line no-undef
+//   new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//       // what does labels do?
+//       labels: get('sport'),
+//       // what does datasets do?
+//       // it's an array of objects
+//       datasets: [{
+//         // what does this label do?
+//         // key, legend
+//         label: '# of Votes',
+//         // what does this data do?
+//         // actually the values in the chart
+//         data: getPizzaArray('timesClicked'),
+//         backgroundColor: [
+//           'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//         ],
+//         borderColor: [
+//           'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//         ],
+//         borderWidth: 1
+//       }]
+//     },
+//     options: {
+//       scales: {
+//         yAxes: [{
+//           ticks: {
+//             beginAtZero: true,
+//             stepSize: 1
+//           }
+//         }]
+//       }
+//     }
+//   });
