@@ -125,8 +125,10 @@ Basket.prototype.saveItem = function() {
 Basket.prototype.addProduct = function(e) {
     e.preventDefault();
     var newProduct = new Item(event.srcElement[0].value, event.srcElement[1].value, event.srcElement[2].value);
+    var currentItems = getLocalCart();
+    currentItems.push(newProduct);
     basket.items.push(newProduct);
-    basket.saveItem(this.items);
+    localStorage.setItem('savedCart', JSON.stringify(currentItems));
     setCartIcon();
 
 }
