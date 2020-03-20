@@ -1,5 +1,6 @@
-
-
+main {
+  background-image: url ("img/redbkground.jpg");
+}
 .news-image {
     height: 300px;
     width: 300px;
@@ -9,7 +10,7 @@
   p.news-info {
     margin-top: 0;
     width: 550px;
-    font-family: 'Bad Script', cursive;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 20px;
     text-align: justify;
