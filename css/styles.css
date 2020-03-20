@@ -7,6 +7,7 @@ nav {
 
 main {
     width: 100%;
+    background-image: url("img/redbkground.jpg");
 }
 
 #title {
@@ -17,7 +18,7 @@ main {
 body {
     margin: 0 auto;
     width: 100%;
-    background-color:lightgrey;
+    /* background-color:lightgrey; */
 }
 
 #headerTitle {
@@ -157,8 +158,14 @@ background-color: darkred ;
 color: white;
 }
 
-#allSport {
-    width: 100%;
+#imgSection {
+    text-align: center;
+}
+
+.allSport {
+    margin: 0 auto;
+    width: 80%;
+
 }
 
 .itemForm {
@@ -173,8 +180,8 @@ color: white;
 
 .cartImage{
 
-width: 50px;
-height: 50px;
+width: 75px;
+height: 75px;
 text-align: center;
 }
 
@@ -216,3 +223,15 @@ text-align: center;
 #icons {
     text-align: center;
 }
+
+.footer {
+    display: inline-block;
+}
+
+#sport {
+    font-size: 25px;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+}
+  
