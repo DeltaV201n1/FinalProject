@@ -66,7 +66,7 @@ function showCart(cart) {
 
     // Add item price
     var price = document.createElement('td');
-    price.textContent = '$ ' + cart[i].price;
+    price.textContent = '$' + cart[i].price;
 
     tr.appendChild(xtd);
     tr.appendChild(imgcart);
@@ -91,7 +91,7 @@ function showCart(cart) {
     sum = sum + parseInt(cart[i].price);
   }
 
-  subtotal.textContent = '$ ' + sum;
+  subtotal.textContent = '$' + sum;
 
   var tr2 = document.createElement('tr');
   var td4 = document.createElement('td');
@@ -101,7 +101,7 @@ function showCart(cart) {
   var tax = document.createElement('td');
   var stax = 0.07;
   var staxes = parseFloat((sum * stax).toFixed(2));
-  tax.textContent = '$ ' + staxes;
+  tax.textContent = '$' + staxes;
 
   var tr3 = document.createElement('tr');
   var td7 = document.createElement('td');
@@ -110,7 +110,7 @@ function showCart(cart) {
   td9.textContent = 'Total :';
   var totalValue = sum + staxes;
   var total = document.createElement('td');
-  total.textContent = '$ ' + totalValue;
+  total.textContent = '$' + totalValue;
 
   tr1.appendChild(td1);
   tr1.appendChild(td2);
