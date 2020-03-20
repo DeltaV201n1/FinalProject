@@ -8,9 +8,11 @@
   }
   p.news-info {
     margin-top: 0;
-    width: 400px;
-    font-family: 'Courgette', cursive;
+    width: 550px;
+    font-family: 'Bad Script', cursive;
+    font-weight: bold;
     font-size: 20px;
+    text-align: justify;
   }
   .news-item {
     clear: both;
@@ -29,7 +31,7 @@
     float: right;
   }
   #pictures {
-      width: 800px;
+      width: 960px;
       margin: auto;
   }
   .content {
