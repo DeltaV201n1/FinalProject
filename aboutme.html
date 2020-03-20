@@ -13,15 +13,17 @@
     </head>
     <body>
       <header>
-       <div id="headerTitle"><img src="img/realLogoSmallest.png" width: 50%></a></div>
-       <nav>
-          <ul>                
-           <li><a href="cart.html"><label id="cart"></label> <img src="img/cartRev2.png" width: 10%></a></li>
-           <li><a href="index.html">Home</a><span id="navHome"></span></li>
-           <li><a href="aboutme.html">About Us</a><span id="navAboutMe"></span></li>              
-         </ul>
-       </nav>
-     </header>
+        <div id="headerTitle">
+            <img id = "logoImg" src="img/realLogoSmallest.png" width: 50%></a>
+            <nav>
+                <ul>                
+                    <li><a href="cart.html"><ion-icon name="cart-outline"></ion-icon><span class="badge badge-warning" id="lblCartCount"></span></a></li>
+                    <li><a href="index.html">Home</a><span id="navHome"></span></li> 
+                    <li><a href="aboutme.html">About Us</a><span id="navAboutMe"></span></li>              
+                </ul>
+            </nav>
+         </div>
+      </header> 
             <main id = pictures>
                 <div class="news-list">
                     <div class="news-item odd">
@@ -94,4 +96,5 @@
         </div>
     </footer>
     </body>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </html>

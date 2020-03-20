@@ -1,4 +1,9 @@
 
+nav {
+    position: relative;
+    top: 75px;
+    right: 10px;
+}
 
 main {
     width: 100%;
@@ -15,14 +20,17 @@ body {
     background-color:lightgrey;
 }
 
-header {
+#headerTitle {
     background-color: darkred;
     height: 160px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 100%;
     padding-top: 14px;
 }
 
+#logoImg {
+    position: absolute;
+}
 
 ul li{
     font-size: 30px;
@@ -30,7 +38,7 @@ ul li{
     float: right;
     font-family: 'Roboto', sans-serif;
     margin-top: 0px;
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     color: white;
     padding: 14px 25px;
     }
@@ -73,7 +81,8 @@ Header a:link, a:visited {
 #shoppingCart{
 
     margin-top: 100px;
-    margin-left: 550px;
+    margin-left: 20%;
+    width: 60%;
 }
 table th {
 
